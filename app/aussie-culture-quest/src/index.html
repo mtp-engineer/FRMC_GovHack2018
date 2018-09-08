@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="addAnimals">
 <head>
   <meta charset="utf-8">
   <title>AussieCultureQuest</title>
@@ -25,7 +25,7 @@
 
       var mymap = L.map('mapid').setView([position.coords.latitude, position.coords.longitude], 14);
 
-      var wmsLayer = L.tileLayer.wms('https://gisservices.information.qld.gov.au/arcgis/services/Basemaps/QldBase_Pastel/MapServer/WMSServer?', 
+      var wmsLayer = L.tileLayer.wms('https://gisservices.information.qld.gov.au/arcgis/services/Basemaps/QldBase_Pastel/MapServer/WMSServer?',
       {
         layers: 'QldBase_Pastel'
       }).addTo(mymap);
@@ -36,11 +36,12 @@
         fillOpacity: 0.5,
         radius: 500
       }).addTo(mymap);
-      
-      var gcFaunaFlora = L.geoJSON([],{pointToLayer: 
+
+
+      var gcFaunaFlora = L.geoJSON([],{pointToLayer:
         function(geoJsonPoint, latlng) {
           return L.marker(latlng,{title:geoJsonPoint.properties.commonname});
-        }, 
+        },
         filter: function(feature){
           return feature.properties.commonname == "Scrub Bloodwood" ?  true :  false;
       }}).addTo(mymap);
@@ -51,9 +52,11 @@
         "opacity": 0.65
       };
 
+
       $.getJSON("./assets/GoldCoastAnimals.json", function(data) {
         gcFaunaFlora.addData(data.features);
       });
+
     });
 
 
@@ -62,5 +65,8 @@
 
     <button id="generate-list-btn">Add Culture</button>
   <app-root></app-root>
+  <p>i sort of helped!</p>
+  <p style='text-align:center;'>Click here to <input type=button value='Print' onclick=window.print();> a teacher copy.</p>
+
 </body>
 </html>
