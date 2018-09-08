@@ -51,6 +51,15 @@ $(function () {
     console.log(data);
     gcWalkingTracks.addData(data.features);
     });
+
+    var north = L.control({position: "bottomright"});
+    north.onAdd = function(map) {
+    var div = L.DomUtil.create("div", "info legend");
+    div.innerHTML = '<img style="width:50px" src="./src/assets/northArrow.svg">';
+    return div;
+    }
+    north.addTo(aashMap);
+
 });
 
 function getExtentFeatures(){
