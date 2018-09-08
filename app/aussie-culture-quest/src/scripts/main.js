@@ -35,10 +35,9 @@ function printTeacherMap() {
     });
     $("#culture-list .container").remove();
     features.forEach(function (value, index, origArray) { 
-        $("#culture-list").append(`<label class="container">` + value.properties.Yugambeh_Word +
-            `<input type="checkbox">
-            <span class="checkmark"></span>
-            </label>`);
+        $("#culture-list").append(`<li class="culture-list-item">
+        <label class="container">` + value.properties.Yugambeh_Word +
+        `</label> <div class="animal-tick-box"></div> </li>`);
     });
 
     let nonPrintable = $(".non-printable");
@@ -61,7 +60,7 @@ function printStudenMap() {
     $("#culture-list .container").remove();
     features.forEach(function (value, index, origArray) { 
         $("#culture-list").append(`<label class="container">` + value.properties.Yugambeh_Word +
-            `<input type="checkbox">
+            `<input type="checkbox" style="outline:1px;solid:#1e5180;">
             <span class="checkmark"></span>
             </label>`);
     });

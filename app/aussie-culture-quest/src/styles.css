@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 /* The container */
-.container {
+/*.container {
     display: block;
     position: relative;
     padding-left: 35px;
@@ -11,49 +11,51 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-}
+}*/
 
 /* Hide the browser's default checkbox */
-.container input {
+/*.container input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
-}
+}*/
 
 /* Create a custom checkbox */
-.checkmark {
+/*.checkmark {
     position: absolute;
     top: 0;
     left: 0;
     height: 25px;
     width: 25px;
     background-color: #eee;
-}
+}*/
 
 /* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
+/*.container:hover input ~ .checkmark {
     background-color: #ccc;
-}
+}*/
 
 /* When the checkbox is checked, add a blue background */
-.container input:checked ~ .checkmark {
+/*.container input:checked ~ .checkmark {
     background-color: #2196F3;
-}
+}*/
 
 /* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
+/*.checkmark:after {
     content: "";
     position: absolute;
     display: none;
-}
+}*/
 
 /* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
+/*.container input:checked ~ .checkmark:after {
     display: block;
-}
+}*/
+
+
 
 /* Style the checkmark/indicator */
-.container .checkmark:after {
+/*.container .checkmark:after {
     left: 9px;
     top: 5px;
     width: 5px;
@@ -63,6 +65,15 @@
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
+}*/
+
+body {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+#content-holder {
+    display:inline-block;
 }
 
 .leaflet-control-zoom-in{
@@ -78,6 +89,13 @@ h2 {
     font-weight: bold;
 }
 
-#printing-div {
-    background-image: "./assets/paperish_backgroun.png"
+
+.animal-tick-box {
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+}
+
+.culture-list-item {
+    /* display: inline-block; */
 }
