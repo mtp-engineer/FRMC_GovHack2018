@@ -51,5 +51,4 @@ $(function () {
     });
 
     console.log(aashMap.getBounds());
-
 });
