@@ -51,6 +51,7 @@ $(function () {
     console.log(data);
     gcWalkingTracks.addData(data.features);
     });
+<<<<<<< HEAD
 
     var north = L.control({position: "bottomright"});
     north.onAdd = function(map) {
@@ -60,6 +61,8 @@ $(function () {
     }
     north.addTo(aashMap);
 
+=======
+>>>>>>> f90839341e0fcacfa2189abe4741e68cde0902b5
 });
 
 function getExtentFeatures(){
@@ -74,11 +77,11 @@ function getExtentFeatures(){
 
     if(extentFeatures.count == 0)
     {
-        alert("No features in the current extent.")
+        alert("No features in the current extent.");
     }
     else
     {
-        alert("Please print features for current extent.")
+        alert("Please print features for current extent.");
         console.log(extentFeatures);
     }
     return extentFeatures;
