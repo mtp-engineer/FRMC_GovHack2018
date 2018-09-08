@@ -1,14 +1,16 @@
+var aashMap;
+var gcFaunaFlora;
 $(function () {
     var currentLat = -27.848217; 
     var currentLong = 153.27;
-    var aashMap = L.map('mapid').setView([currentLat, currentLong], 15)
+    aashMap = L.map('mapid').setView([currentLat, currentLong], 15)
 
     var wmsLayer = L.tileLayer.wms('https://gisservices.information.qld.gov.au/arcgis/services/Basemaps/QldBase_Pastel/MapServer/WMSServer?', 
     {
     layers: 'QldBase_Pastel'
     }).addTo(aashMap);
     
-    var gcFaunaFlora = L.geoJSON([],{pointToLayer: 
+    gcFaunaFlora = L.geoJSON([],{pointToLayer: 
     function(geoJsonPoint, latlng) {
         var icon = L.icon({
         iconUrl: "./assets/koala.svg",
@@ -49,6 +51,29 @@ $(function () {
     console.log(data);
     gcWalkingTracks.addData(data.features);
     });
-
-    console.log(aashMap.getBounds());
 });
+
+function getExtentFeatures(){
+    var mapBounds = aashMap.getBounds();
+    var extentFeatures = new Array();
+    //intersection testing
+    //L.rectangle(mapBounds, {color: "#ff7800", weight: 1}).addTo(aashMap);
+    gcFaunaFlora.eachLayer(function(e){
+        var point = L.latLng(e.feature.geometry.coordinates[1], e.feature.geometry.coordinates[0]);
+        mapBounds.contains(point) ? extentFeatures.push(e.feature) : null;
+    });
+
+    if(extentFeatures.count == 0)
+    {
+        alert("No features in the current extent.");
+    }
+    else
+    {
+        alert("Please print features for current extent.");
+        console.log(extentFeatures);
+    }
+    return extentFeatures;
+}
+
+
+
