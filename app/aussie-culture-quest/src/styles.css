@@ -71,3 +71,13 @@
 .leaflet-control-zoom-out{
     display:none  !important;
 }
+
+h2 {
+    font-family: MV boli;
+    color: #009933;
+    font-weight: bold;
+}
+
+#printing-div {
+    background-image: "./assets/paperish_backgroun.png"
+}

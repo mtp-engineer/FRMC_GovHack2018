@@ -16,17 +16,20 @@
 </head>
 <body style="text-align: center;font-family: 'Roboto', sans-serif;">
   <div style="display:inline-block;">
-  <div>
-    <h2>
-      Aussie Animal Scavenger Hunt
-    </h2>
+    <div id="printing-div" background="">
+      <h2>Aussie Animal Scavenger Hunt</h2>
+    
+      <div id="mapid" style="display:inline-block; width: 600px; height: 400px; position: relative; outline: none;" class="leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" tabindex="0"></div>
+    
+      <ul id="culture-list">
+      </ul>
+    </div>
+    <div class="non-printable">
+      <button id="generate-list-btn">Add Culture</button>
+      <app-root></app-root>
+    
+      <p style='text-align:center;'>Click here to <input type=button value='Print' onclick=printTeacherMap();> a teacher copy.</p>
+    </div>
   </div>
-    <div id="mapid" style="display:inline-block; width: 600px; height: 400px; position: relative; outline: none;" class="leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" tabindex="0"></div>
-    <ul id="culture-list">
-    </ul>
-    <button id="generate-list-btn">Add Culture</button>
-  <app-root></app-root>
-  <p style='text-align:center;'>Click here to <input type=button value='Print' onclick=getExtentFeatures();> a teacher copy.</p>
-</div>
 </body>
 </html>

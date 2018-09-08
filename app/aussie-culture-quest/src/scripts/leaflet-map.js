@@ -69,7 +69,7 @@ function getExtentFeatures(){
     }
     else
     {
-        alert("Please print features for current extent.");
+        //alert("Please print features for current extent.");
         console.log(extentFeatures);
     }
     return extentFeatures;
