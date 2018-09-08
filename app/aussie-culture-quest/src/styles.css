@@ -64,3 +64,10 @@
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
 }
+
+.leaflet-control-zoom-in{
+    display:none  !important;
+}
+.leaflet-control-zoom-out{
+    display:none  !important;
+}
