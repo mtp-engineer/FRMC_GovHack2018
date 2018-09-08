@@ -20,10 +20,14 @@
     <script>
     
     navigator.geolocation.getCurrentPosition(function(position) {
-      var currentLat = position.coords.latitude;
-      var currentLong = position.coords.longitude;
+      var currentLat = -27.848217; 
+      var currentLong = 153.27;
 
-      var mymap = L.map('mapid').setView([position.coords.latitude, position.coords.longitude], 14);
+      var mymap = L.map('mapid').setView([currentLat, currentLong], 15);
+      //todo remove default basemap, can't workout how
+      mymap.eachLayer(function(layer){
+        mymap.removeLayer(layer)
+});
 
       var wmsLayer = L.tileLayer.wms('https://gisservices.information.qld.gov.au/arcgis/services/Basemaps/QldBase_Pastel/MapServer/WMSServer?', 
       {
@@ -39,23 +43,46 @@
       
       var gcFaunaFlora = L.geoJSON([],{pointToLayer: 
         function(geoJsonPoint, latlng) {
-          return L.marker(latlng,{title:geoJsonPoint.properties.commonname});
+          var icon = L.icon({
+            iconUrl: "./assets/koala.svg",
+            iconSize: [38, 95],
+            iconAnchor: [22, 94],
+            popupAnchor: [-3, -76],
+            shadowSize: [68, 95],
+            shadowAnchor: [22, 94]
+          });
+          return L.marker(latlng,{icon:icon,title:geoJsonPoint.properties.COMMONNAME}).bindTooltip("my tooltip text").openTooltip();
         }, 
         filter: function(feature){
-          return feature.properties.commonname == "Scrub Bloodwood" ?  true :  false;
+          return true;//return feature.properties.commonname == "Scrub Bloodwood" ?  true :  false;
       }}).addTo(mymap);
-
-      var gcFaunaFlory_point = {
-        "color": "#ff7800",
-        "weight": 5,
-        "opacity": 0.65
-      };
 
       $.getJSON("./assets/GoldCoastAnimals.json", function(data) {
         gcFaunaFlora.addData(data.features);
       });
-
       
+      var gcWalkingTracks = L.geoJSON([],{pointToLayer: 
+        function(geoJsonPoint, latlng) {
+          var icon = L.icon({
+            iconUrl: "./assets/koala.svg",
+            iconSize: [38, 95],
+            iconAnchor: [22, 94],
+            popupAnchor: [-3, -76],
+            shadowSize: [68, 95],
+            shadowAnchor: [22, 94]
+          });
+          return L.marker(latlng,{icon:icon,title:geoJsonPoint.properties.COMMONNAME}).bindTooltip("my tooltip text").openTooltip();;
+        }, 
+        filter: function(feature){
+          return feature.id == "ckan_48bc9574_e94b_419d_b4d4_2287aff69cb6.9088" ?  true :  false;
+          
+      }}).addTo(mymap);
+
+      $.getJSON("https://data.gov.au/geoserver/gold-coast-pathways/wfs?request=GetFeature&typeName=ckan_48bc9574_e94b_419d_b4d4_2287aff69cb6&outputFormat=json", function(data) {
+        console.log(data);
+        gcWalkingTracks.addData(data.features);
+      });
+     
       
     });
       
