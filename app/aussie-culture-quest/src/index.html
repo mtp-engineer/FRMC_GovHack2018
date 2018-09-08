@@ -5,26 +5,28 @@
   <title>AussieCultureQuest</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./src/styles.css"/>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin="">
   <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
   <script src="https://code.jquery.com/jquery-3.3.1.js"integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="crossorigin="anonymous"></script>
-  <script src="./src/scripts/locationfilter.js"></script>
   <script src="./src/scripts/leaflet-map.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  
 </head>
-<body >
+<body style="text-align: center;font-family: 'Roboto', sans-serif;">
+  <div style="display:inline-block;>
   <div>
     <h2>
       Aussie Animal Scavenger Hunt
     </h2>
   </div>
-    <div id="mapid" style="width: 600px; height: 400px; position: relative; outline: none;" class="leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" tabindex="0"></div>
+    <div id="mapid" style="display:inline-block; width: 600px; height: 400px; position: relative; outline: none;" class="leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" tabindex="0"></div>
     <ul id="culture-list">
     </ul>
     <button id="generate-list-btn">Add Culture</button>
   <app-root></app-root>
-  <p>i sort of helped!</p>
   <p style='text-align:center;'>Click here to <input type=button value='Print' onclick=getExtentFeatures();> a teacher copy.</p>
-
+</div>
 </body>
 </html>
