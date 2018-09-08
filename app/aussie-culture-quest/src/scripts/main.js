@@ -33,11 +33,11 @@ function printTeacherMap() {
         wordArray.push(value.properties.Yugambeh_Word);
         return true;
     });
-    $("#culture-list .container").remove();
+    $("#culture-list li").remove();
     features.forEach(function (value, index, origArray) { 
-        $("#culture-list").append(`<li class="culture-list-item">
-        <label class="container">` + value.properties.Yugambeh_Word +
-        `</label> <div class="animal-tick-box"></div> </li>`);
+        $("#culture-list").append(`<li class="culture-list-item"> 
+            <label class="container">` + value.properties.Yugambeh_Word + 
+            `<div class="animal-tick-box"></div></label><img ` +  + `></img></li>`);
     });
 
     let nonPrintable = $(".non-printable");
@@ -57,7 +57,7 @@ function printStudenMap() {
         wordArray.push(value.properties.Yugambeh_Word);
         return true;
     });
-    $("#culture-list .container").remove();
+    $("#culture-list li").remove();
     features.forEach(function (value, index, origArray) { 
         $("#culture-list").append(`<label class="container">` + value.properties.Yugambeh_Word +
             `<input type="checkbox" style="outline:1px;solid:#1e5180;">
