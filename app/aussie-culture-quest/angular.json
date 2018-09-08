@@ -28,6 +28,7 @@
             ],
             "scripts": [
               "src/scripts/leaflet-map.js",
+              "src/scripts/locationfilter.js",
               "src/scripts/main.js"
               
             ]
