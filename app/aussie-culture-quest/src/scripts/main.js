@@ -33,8 +33,9 @@ function generateStudentSheet() {
     $(".culture-list-item").remove();
     features.forEach(function (value, index, origArray) { 
         $("#culture-list").append(`<div class="culture-list-item">
-        <img src="./assets/` + value.properties.Yugambeh_Word + `.png"> 
-        <div class="native-name">____________________________</div><div class="animal-tick-box"></div></div>`);
+        <div style="float:left"><img src="./assets/` + value.properties.Yugambeh_Word + `.png"></div>
+        <div class="animal-tick-box"></div>
+        <div class="native-name">____________________________</div></div>`);
     }); 
 }
 
