@@ -91,11 +91,20 @@ h2 {
 
 
 .animal-tick-box {
-    width: 20px;
-    height: 20px;
+    width: 35px;
+    height: 35px;
     border: 1px solid black;
+    float: right;
 }
 
 .culture-list-item {
-    /* display: inline-block; */
+    height: 100px;
+}
+
+.culture-list-item img {
+    float: left;
+}
+
+.native-name {
+    vertical-align: bottom;
 }

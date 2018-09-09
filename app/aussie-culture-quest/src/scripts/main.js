@@ -10,12 +10,12 @@ function generateGuideSheet() {
         wordArray.push(value.properties.Yugambeh_Word);
         return true;
     });
-    $("#culture-list span").remove();
+    $(".culture-list-item").remove();
     features.forEach(function (value, index, origArray) { 
-        $("#culture-list").append(`<li class="culture-list-item">
+        $("#culture-list").append(`<div class="culture-list-item">
         <img src="./assets/` + value.properties.Yugambeh_Word + `.png"> 
-        <label>` + value.properties.Yugambeh_Word + 
-        `<div class="animal-tick-box"></div></label></li>`);
+        ` + value.properties.Yugambeh_Word + 
+        `<div class="animal-tick-box"></div></div>`);
     });      
 }
 
@@ -30,11 +30,11 @@ function generateStudentSheet() {
         wordArray.push(value.properties.Yugambeh_Word);
         return true;
     });
-    $("#culture-list span").remove();
+    $(".culture-list-item").remove();
     features.forEach(function (value, index, origArray) { 
-        $("#culture-list").append(`<span class="culture-list-item">
+        $("#culture-list").append(`<div class="culture-list-item">
         <img src="./assets/` + value.properties.Yugambeh_Word + `.png"> 
-        <label>__________________________________<div class="animal-tick-box"></div></label></span>`);
+        <div class="native-name">____________________________</div><div class="animal-tick-box"></div></div>`);
     }); 
 }
 
