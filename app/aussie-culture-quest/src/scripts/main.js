@@ -1,5 +1,5 @@
 $(function () {
-    $("#generate-list-btn").on("click", function (event) {
+   /* $("#generate-list-btn").on("click", function (event) {
 
         var features = getExtentFeatures();
 
@@ -13,16 +13,15 @@ $(function () {
         });
         $("#culture-list .container").remove();
         features.forEach(function (value, index, origArray) { 
-            $("#culture-list").append(`<label class="container">` + value.properties.Yugambeh_Word +
-                `<input type="checkbox">
-                <span class="checkmark"></span>
-                </label>`);
+            $("#culture-list").append(`<li class="culture-list-item">
+            <img src="./assets/` + value.properties.Yugambeh_Word + `.png"> 
+            <label>` + value.properties.Yugambeh_Word + 
+            `<div class="animal-tick-box"></div></label></li>`);
         });      
-    });
+    }); */
 });
 
-function printTeacherMap() {
-
+function generateGuideSheet() {
     var features = getExtentFeatures();
 
     var wordArray = [];
@@ -35,18 +34,14 @@ function printTeacherMap() {
     });
     $("#culture-list li").remove();
     features.forEach(function (value, index, origArray) { 
-        $("#culture-list").append(`<li class="culture-list-item"> 
-            <label class="container">` + value.properties.Yugambeh_Word + 
-            `<div class="animal-tick-box"></div></label><img ` +  + `></img></li>`);
-    });
-
-    let nonPrintable = $(".non-printable");
-    nonPrintable.hide();
-    window.print();
-    nonPrintable.show();
+        $("#culture-list").append(`<li class="culture-list-item">
+        <img src="./assets/` + value.properties.Yugambeh_Word + `.png"> 
+        <label>` + value.properties.Yugambeh_Word + 
+        `<div class="animal-tick-box"></div></label></li>`);
+    });      
 }
 
-function printStudenMap() {
+function generateStudentSheet() {
     var features = getExtentFeatures();
 
     var wordArray = [];
@@ -59,12 +54,14 @@ function printStudenMap() {
     });
     $("#culture-list li").remove();
     features.forEach(function (value, index, origArray) { 
-        $("#culture-list").append(`<label class="container">` + value.properties.Yugambeh_Word +
-            `<input type="checkbox" style="outline:1px;solid:#1e5180;">
-            <span class="checkmark"></span>
-            </label>`);
-    });
+        $("#culture-list").append(`<li class="culture-list-item">
+        <img src="./assets/` + value.properties.Yugambeh_Word + `.png"> 
+        <label>` + value.properties.Yugambeh_Word + 
+        `<div class="animal-tick-box"></div></label></li>`);
+    }); 
+}
 
+function printSheet() {
     let nonPrintable = $(".non-printable");
     nonPrintable.hide();
     window.print();

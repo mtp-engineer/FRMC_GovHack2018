@@ -17,20 +17,23 @@
 <body>
   <div id="content-holder">
     <div id="printing-div">
-      <h2>Aussie Animal Scavenger Hunt</h2>
+        <h2>Aussie Animal Scavenger Hunt</h2>
     
-      <div id="mapid" style="display:inline-block; width: 600px; height: 400px; position: relative; outline: none;" class="leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" tabindex="0"></div>
+        <div id="mapid" style="display:inline-block; width: 600px; height: 400px; position: relative; outline: none;" class="leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" tabindex="0"></div>
     
-      <ul id="culture-list">
-      </ul>
-    </div>
-    <div class="non-printable">
-      <button id="generate-list-btn">Add Culture</button>
-      <app-root></app-root>
+        <ul id="culture-list">
+        </ul>
+      </div>
+
+      <div class="non-printable">
+        <!-- <button id="generate-list-btn" onclick=generateGuideSheet();>Generate Guide Sheet</button>
+        <button id="generate-list-btn" onclick=generateStudentSheet();>Generate Student Sheet</button> -->
+        <app-root></app-root>
     
-      <p style='text-align:center;'>Click here to <input type=button value='Print' onclick=printTeacherMap();> a teacher copy.</p>
-      <p style='text-align:center;'>Click here to <input type=button value='Print' onclick=printStudentMap();> a student copy.</p>
-    </div>
+        <p style='text-align:center;'>Click here to <input type=button value='Generate Guide Sheet' onclick=generateGuideSheet();> a teacher copy.</p>
+        <p style='text-align:center;'>Click here to <input type=button value='Generate Student Sheet' onclick=generateStudentSheet();> a student copy.</p>
+      </div>
+
   </div>
 </body>
 </html>
