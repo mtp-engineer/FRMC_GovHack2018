@@ -12,13 +12,11 @@ $(function () {
     
     gcFaunaFlora = L.geoJSON([],{pointToLayer: 
     function(geoJsonPoint, latlng) {
+        var rndIndex  = Math.floor((Math.random() * 10) + 1);
+        var images = ["Baleirei.png","Geira.png","Chungarra.png","Golgorun.png","Guran.png","Jingeri.png","Kagaru.png","Kulamburum.png","Muni.png","Pigin.png","Taran.png","Wongari.png"];
         var icon = L.icon({
-        iconUrl: "./assets/koala.svg",
-        iconSize: [38, 95],
-        iconAnchor: [22, 94],
-        popupAnchor: [-3, -76],
-        shadowSize: [68, 95],
-        shadowAnchor: [22, 94]
+        iconUrl: "./assets/" + geoJsonPoint.properties.Yugambeh_Word + ".png",
+        iconSize: [25, 25]
         });
         return L.marker(latlng,{icon:icon,title:geoJsonPoint.properties.COMMONNAME});
     }, 
@@ -33,7 +31,7 @@ $(function () {
     var gcWalkingTracks = L.geoJSON([],{pointToLayer: 
     function(geoJsonPoint, latlng) {
         var icon = L.icon({
-        iconUrl: "./assets/koala.svg",
+        iconUrl: "./assets/Geira.png.svg",
         iconSize: [38, 95],
         iconAnchor: [22, 94],
         popupAnchor: [-3, -76],
@@ -43,7 +41,7 @@ $(function () {
         return L.marker(latlng,{icon:icon,title:geoJsonPoint.properties.COMMONNAME}).bindTooltip("my tooltip text").openTooltip();;
     }, 
     filter: function(feature){
-        return feature.id == "ckan_48bc9574_e94b_419d_b4d4_2287aff69cb6.9088" ?  true :  false;
+        return true;//return feature.id == "ckan_48bc9574_e94b_419d_b4d4_2287aff69cb6.9088" ?  true :  false;
         
     }}).addTo(aashMap);
 

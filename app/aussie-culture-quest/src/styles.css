@@ -107,4 +107,14 @@ h2 {
 
 .native-name {
     vertical-align: bottom;
+    /* display: inline-block; */
+}
+
+#printing-div{
+    border-style: solid;
+    border-color: rgb(38, 115, 0);
+    border-radius:3px;
+    background-color: rgb(242, 208, 142);
+    padding-left:50px;
+    padding-right:50px;
 }
