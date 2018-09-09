@@ -14,8 +14,8 @@ function generateGuideSheet() {
     features.forEach(function (value, index, origArray) { 
         $("#culture-list").append(`<div class="culture-list-item">
         <img src="./assets/` + value.properties.Yugambeh_Word + `.png"> 
-        ` + value.properties.Yugambeh_Word + 
-        `<div class="animal-tick-box"></div></div>`);
+        <div class="native-name-teacher">` + value.properties.Yugambeh_Word + `</div>
+        <div class="animal-tick-box"></div></div>`);
     });      
 }
 
