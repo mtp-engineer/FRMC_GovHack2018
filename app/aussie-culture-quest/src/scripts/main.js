@@ -10,7 +10,7 @@ function generateGuideSheet() {
         wordArray.push(value.properties.Yugambeh_Word);
         return true;
     });
-    $("#culture-list li").remove();
+    $("#culture-list span").remove();
     features.forEach(function (value, index, origArray) { 
         $("#culture-list").append(`<li class="culture-list-item">
         <img src="./assets/` + value.properties.Yugambeh_Word + `.png"> 
@@ -30,12 +30,11 @@ function generateStudentSheet() {
         wordArray.push(value.properties.Yugambeh_Word);
         return true;
     });
-    $("#culture-list li").remove();
+    $("#culture-list span").remove();
     features.forEach(function (value, index, origArray) { 
-        $("#culture-list").append(`<li class="culture-list-item">
+        $("#culture-list").append(`<span class="culture-list-item">
         <img src="./assets/` + value.properties.Yugambeh_Word + `.png"> 
-        <label>` + value.properties.Yugambeh_Word + 
-        `<div class="animal-tick-box"></div></label></li>`);
+        <label>__________________________________<div class="animal-tick-box"></div></label></span>`);
     }); 
 }
 
